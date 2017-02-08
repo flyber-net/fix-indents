@@ -1,8 +1,8 @@
 {
   "name": "fix-indents",
   "version": "0.0.2",
-   "uperversion": "0.1",
-   "subversion": 2045,
+  "uperversion": "0.1",
+  "subversion": 2045,
   "description": "Fox Indents in Indented Languages like SASS, CoffeeScript, LiveScript, Haskell, Ocaml, F#, Python, etc",
   "main": "fix-indents.js",
   "scripts": {
@@ -22,5 +22,8 @@
   "bugs": {
     "url": "https://github.com/askucher/fix-indents/issues"
   },
-  "homepage": "https://github.com/askucher/fix-indents#readme"
+  "homepage": "https://github.com/askucher/fix-indents#readme",
+  "dependencies": {
+    "prelude-ls": "^1.1.2"
+  }
 }
