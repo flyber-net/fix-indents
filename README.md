@@ -7,6 +7,12 @@
 npm install fix-indents -g
 ```
 
+### Use in Command Line
+```sh
+
+fix-indents ./style.sass
+
+```
 
 ### Use with NodeJs
 ```Javascript
