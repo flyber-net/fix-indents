@@ -16,7 +16,7 @@ npm install fix-indents -g
 ### Use in Command Line
 ```sh
 
-fix-indents ./style.sass
+fixindents ./style.sass
 
 ```
 
