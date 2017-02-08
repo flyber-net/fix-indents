@@ -1,4 +1,5 @@
 module.exports = (str, options)->
+  count-spaces = options?count-spaces ? 2
   escape = (str) ->
     str.replace /[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&'  
   get-spaces = (str)->
@@ -21,8 +22,8 @@ module.exports = (str, options)->
     next-spaces = 
       | current-spaces is previous.original => previous.spaces
       | current-spaces is previous.spaces => current-spaces
-      | current-spaces > previous.spaces => previous.spaces + 2
-      | _ => current-spaces - (current-spaces % 2)
+      | current-spaces > previous.spaces => previous.spaces + count-spaces
+      | _ => current-spaces - (current-spaces % count-spaces)
     #console.log previous.spaces, current-spaces, next-spaces, current
     next = current.replace(/^[ ]+/, [0 to next-spaces - 1].map(-> " ").join(""))
     previous.push next
