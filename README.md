@@ -3,6 +3,8 @@
 
 ![Example](https://content.screencast.com/users/a.stegno/folders/Jing/media/c4b5c81d-de94-45cf-be2a-85039d3cdaac/00000110.png)
 
+
+![SASS Example](https://content.screencast.com/users/a.stegno/folders/Jing/media/d6bd983c-bf5b-46a2-b78f-677fea5ef295/00000111.png)
 ###Motivation
 Developer puts different amount of indents during development. This tools allows to refactor indents into one consistent and accurate indented code
 
