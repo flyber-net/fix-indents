@@ -1,5 +1,8 @@
 ![Logo](https://content.screencast.com/users/a.stegno/folders/Jing/media/6f2364b6-707d-4645-855c-991abdac0042/00000113.png)
-## Fix Indents in Indented Languages like SASS, Pug, CoffeeScript, LiveScript, Haskell, Ocaml, F#, Python, Bash, etc.
+
+Fix Indents in Indented Languages like SASS, Pug, CoffeeScript, LiveScript, Haskell, Ocaml, F#, Python, Bash, etc.
+
+## Demo
 
 ![Demo](https://mir-s3-cdn-cf.behance.net/project_modules/disp/04d28e48574753.589b99afb0f6c.gif)
 
