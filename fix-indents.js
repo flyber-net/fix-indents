@@ -45,6 +45,8 @@
         switch (false) {
         case currentSpaces !== previous.original:
           return previous.spaces;
+        case !(currentSpaces > previous.original && currentSpaces === previous.spaces):
+          return currentSpaces + countSpaces;
         case currentSpaces !== previous.spaces:
           return currentSpaces;
         case !(currentSpaces > previous.spaces):
