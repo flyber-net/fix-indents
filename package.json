@@ -1,32 +1,32 @@
 {
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "dependencies": {
-    "prelude-ls": "^1.1.2"
-  },
-  "uperversion": "0.1",
-  "subversion": 2051,
+  "homepage": "https://github.com/askucher/fix-indents#readme",
+  "main": "fix-indents.js",
+  "description": "Fox Indents in Indented Languages like SASS, CoffeeScript, LiveScript, Haskell, Ocaml, F#, Python, etc",
   "bin": {
     "fix-indents": "./fix-indents"
   },
-  "description": "Fox Indents in Indented Languages like SASS, CoffeeScript, LiveScript, Haskell, Ocaml, F#, Python, etc",
-  "main": "fix-indents.js",
-  "homepage": "https://github.com/askucher/fix-indents#readme",
-  "name": "fix-indents",
+  "subversion": 2052,
+  "uperversion": "0.1",
+  "dependencies": {
+    "prelude-ls": "^1.1.2"
+  },
+  "version": "0.1.2052",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/askucher/fix-indents.git"
+  },
+  "bugs": {
+    "url": "https://github.com/askucher/fix-indents/issues"
+  },
+  "license": "ISC",
+  "author": "Flyber",
   "keywords": [
     "indents",
     "tool",
     "fix"
   ],
-  "author": "Flyber",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/askucher/fix-indents/issues"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/askucher/fix-indents.git"
-  },
-  "version": "0.1.2051"
+  "name": "fix-indents",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
 }

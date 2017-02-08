@@ -27,18 +27,21 @@ console.log(fixedCode);
 
 ### Options
 
-countSpaces - Prefered amount of spaces for formatting
-ignoreInside - Ignore multiline comment and multiline strings
+Option | Description
+---  | ---
+countSpaces | Prefered amount of spaces for formatting
+ignoreInside | Ignore multiline comment and multiline strings
 
-Example for LiveScript
+
+Example for LiveScript:
 
 ```JSON
 { 
   
   "countSpaces": 2,
   "ignoreInside": [
-     * ["'''", "'''"],
-     * ["/*" , "*/" ],
-     * ['"""', '"""']
+     ["'''", "'''"],
+     ["/*" , "*/" ],
+     ['"""', '"""']
   ]
 ```
