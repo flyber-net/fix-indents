@@ -1,5 +1,5 @@
 # Fix Indents 
-## Fox Indents in Indented Languages like SASS, CoffeeScript, LiveScript, Haskell, Ocaml, F#, Python, etc
+## Fix Indents in Indented Languages like SASS, CoffeeScript, LiveScript, Haskell, Ocaml, F#, Python, etc
 
 ![Example](https://content.screencast.com/users/a.stegno/folders/Jing/media/c4b5c81d-de94-45cf-be2a-85039d3cdaac/00000110.png)
 
