@@ -9,7 +9,7 @@
 
 * Developer puts different amount of indents during development. This tools allows to refactor indents into one consistent and accurate indented code.
 * Sometimes Developer need to add top level block. It forces to move all nested tree.
-* SASS will throw the error for inconsistent intends
+* SASS will throw the error for inconsistent indents
 
 ### Install
 
