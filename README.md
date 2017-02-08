@@ -21,7 +21,7 @@ fix-indents ./style.sass
 ### Use with NodeJs
 ```Javascript
 
-fixIndents = require("fix-indents");
+fixIndents = require("fix-indents", { /*options*/ });
 
 fixedCode = fixIndents("PUT CODE HERE");
 
