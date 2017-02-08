@@ -9,7 +9,9 @@
 * Developer puts different amount of indents during development. This tools allows to refactor indents into one consistent and accurate indented code.
 * Sometimes Developer need to add top level block. It forces to move all nested tree.
 ### Install
+
 ```
+#Install Nodejs
 npm install fix-indents -g
 ```
 
