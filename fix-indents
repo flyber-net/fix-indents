@@ -1,6 +1,2 @@
 #!/usr/bin/env node
-var fs = require("fs");
-var fixIndents = require('./fix-indents.js');
-var fileName = process.argv[1];
-var fileContent = fs.readFileSync(fileName).toString("utf8");
-console.log(fixIndents(fileContent));
+console.log(require('./fix-indents.js')(require("fs").readFileSync(process.argv[1]).toString("utf8")));
