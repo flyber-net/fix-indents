@@ -6,8 +6,8 @@
 
 ![SASS Example](https://content.screencast.com/users/a.stegno/folders/Jing/media/d6bd983c-bf5b-46a2-b78f-677fea5ef295/00000111.png)
 ###Motivation
-Developer puts different amount of indents during development. This tools allows to refactor indents into one consistent and accurate indented code
-
+* Developer puts different amount of indents during development. This tools allows to refactor indents into one consistent and accurate indented code.
+* Sometimes Developer need to add top level block. It forces to move all nested tree.
 ### Install
 ```
 npm install fix-indents -g
