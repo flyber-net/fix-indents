@@ -2,5 +2,5 @@
 var fs = require("fs");
 var fixIndents = require('./fix-indents.js');
 var fileName = process.argv[1];
-var fileContent = fs.readFileSync(fileName);
+var fileContent = fs.readFileSync(fileName).toString("utf8");
 console.log(fixIndents(fileContent));
