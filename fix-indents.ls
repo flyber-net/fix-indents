@@ -1,3 +1,4 @@
+p = require \prelude-ls
 module.exports = (str, options)->
   count-spaces = options?count-spaces ? 2
   escape = (str) ->
@@ -32,6 +33,6 @@ module.exports = (str, options)->
     previous
   
 
-  str = str.split(\\n) |> foldl process, []
-                       |> join \\n
+  str = str.split(\\n) |> p.foldl process, []
+                       |> p.join \\n
     
