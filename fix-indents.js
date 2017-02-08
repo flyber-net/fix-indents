@@ -18,7 +18,7 @@
         return current.match(escape(get(rule)));
       });
       eachIgnore = function(get){
-        if (typeof options.ignoreInside !== 'Array') {
+        if (typeof (options != null ? options.ignoreInside : void 8) !== 'Array') {
           return false;
         }
         return p.any(findIgnore(get))(
