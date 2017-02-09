@@ -121,7 +121,7 @@
     };
     return p.join('\n')(
     p.foldl(process, [])(
-    str.replace(/\t/g, '  ').split('\n')));
+    str.replace(/\t/g, gen(countSpaces)).split('\n')));
   };
   module.exports = fix;
   function curry$(f, bound){
