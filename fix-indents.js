@@ -2,6 +2,12 @@
 (function(){
   var p, fix;
   p = require('prelude-ls');
+  p = {
+    any: any,
+    foldl: foldl,
+    join: join,
+    reverse: reverse
+  };
   fix = function(str, options){
     var countSpaces, ref$, escape, getSpaces, process;
     countSpaces = (ref$ = options != null ? options.countSpaces : void 8) != null ? ref$ : 2;
@@ -13,7 +19,7 @@
       return (ref$ = (ref1$ = str.match(/^[ ]+/g)) != null ? (ref2$ = ref1$[0]) != null ? ref2$.length : void 8 : void 8) != null ? ref$ : 0;
     };
     process = function(previous, line){
-      var findIgnore, eachIgnore, ref$, current, last, find, find2, found, shift, next, this$ = this;
+      var findIgnore, eachIgnore, ref$, current, last, find, find2, found, gen, shift, index, r_last, next, this$ = this;
       findIgnore = curry$(function(get, rule){
         return line.match(escape(get(rule)));
       });
@@ -79,13 +85,22 @@
         return 0;
       };
       found = find(current.actual);
+      gen = function(num){
+        return (function(){
+          var i$, to$, results$ = [];
+          for (i$ = 0, to$ = num - 1; i$ <= to$; ++i$) {
+            results$.push(i$);
+          }
+          return results$;
+        }()).map(function(){
+          return " ";
+        }).join("");
+      };
       shift = current.actual + current.actual % countSpaces;
       current.fixed = (function(){
         switch (false) {
         case last != null:
           return 0;
-        case found === current.actual:
-          return found;
         case !(last.fixed < last.actual && last.actual === current.actual):
           return last.fixed;
         case !(last.actual < current.actual && last.fixed < current.actual):
@@ -94,19 +109,23 @@
           return shift + countSpaces;
         case !(last.actual > current.actual && shift !== current.actual):
           return find2(current.actual);
+        case found === current.actual:
+          return found;
         default:
           return current.actual;
         }
       }());
-      next = line.replace(/^[ ]+/, (function(){
-        var i$, to$, results$ = [];
-        for (i$ = 0, to$ = current.fixed - 1; i$ <= to$; ++i$) {
-          results$.push(i$);
+      index = 1;
+      do {
+        r_last = previous.log[previous.log.length - index];
+        if (current.fixed === (r_last != null ? r_last.fixed : void 8) && current.actual < r_last.actual) {
+          previous[previous.length - index] = gen(countSpaces) + previous[previous.length - index];
+          index += 1;
+        } else {
+          index = 0;
         }
-        return results$;
-      }()).map(function(){
-        return " ";
-      }).join(""));
+      } while (index > 0);
+      next = line.replace(/^[ ]+/, gen(current.fixed));
       previous.log.push(current);
       previous.push(next);
       return previous;
