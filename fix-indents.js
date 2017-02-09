@@ -4,7 +4,7 @@
   p = require('prelude-ls');
   fix = function(str, options){
     var countSpaces, ref$, escape, getSpaces, process;
-    countSpaces = (ref$ = options != null ? options.countSpaces : void 8) != null ? ref$ : 3;
+    countSpaces = (ref$ = options != null ? options.countSpaces : void 8) != null ? ref$ : 4;
     escape = function(str){
       return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, '\\$&');
     };
