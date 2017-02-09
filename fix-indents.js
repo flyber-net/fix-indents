@@ -13,7 +13,7 @@
       return (ref$ = (ref1$ = str.match(/^[ ]+/g)) != null ? (ref2$ = ref1$[0]) != null ? ref2$.length : void 8 : void 8) != null ? ref$ : 0;
     };
     process = function(previous, line){
-      var findIgnore, eachIgnore, ref$, current, last, find, shift, next, this$ = this;
+      var findIgnore, eachIgnore, ref$, current, last, find, find2, found, shift, next, this$ = this;
       findIgnore = curry$(function(get, rule){
         return line.match(escape(get(rule)));
       });
@@ -54,17 +54,32 @@
         previous.log);
         for (i$ = 0, len$ = reversed.length; i$ < len$; ++i$) {
           item = reversed[i$];
+          if (item.actual === actual) {
+            return item.fixed;
+          }
+        }
+        return actual;
+      };
+      find2 = function(actual){
+        var reversed, i$, len$, item;
+        reversed = p.reverse(
+        previous.log);
+        for (i$ = 0, len$ = reversed.length; i$ < len$; ++i$) {
+          item = reversed[i$];
           if (item.actual <= actual) {
             return item.fixed;
           }
         }
         return 0;
       };
+      found = find(current.actual);
       shift = current.actual + current.actual % countSpaces;
       current.fixed = (function(){
         switch (false) {
         case last != null:
           return 0;
+        case found === current.actual:
+          return found;
         case !(last.fixed < last.actual && last.actual === current.actual):
           return last.fixed;
         case !(last.actual < current.actual && last.fixed < current.actual):
@@ -72,7 +87,7 @@
         case !(last.actual < current.actual && last.fixed === current.actual):
           return shift + countSpaces;
         case !(last.actual > current.actual && shift !== current.actual):
-          return find(current.actual);
+          return find2(current.actual);
         default:
           return current.actual;
         }
