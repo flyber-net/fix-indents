@@ -66,8 +66,14 @@
         previous.log);
         for (i$ = 0, len$ = reversed.length; i$ < len$; ++i$) {
           item = reversed[i$];
-          if (item.actual <= actual) {
+          if (item.actual === actual) {
             return item.fixed;
+          }
+        }
+        for (i$ = 0, len$ = reversed.length; i$ < len$; ++i$) {
+          item = reversed[i$];
+          if (item.actual < actual) {
+            return actual - (item.actual - item.fixed);
           }
         }
         return 0;
