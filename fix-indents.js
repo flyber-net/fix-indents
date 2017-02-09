@@ -13,7 +13,7 @@
       return (ref$ = (ref1$ = str.match(/^[ ]+/g)) != null ? (ref2$ = ref1$[0]) != null ? ref2$.length : void 8 : void 8) != null ? ref$ : 0;
     };
     process = function(previous, line){
-      var findIgnore, eachIgnore, ref$, current, last, find, find2, found, gen, shift, index, r_last, next, this$ = this;
+      var findIgnore, eachIgnore, ref$, current, last, find2, found, gen, shift, index, r_last, next, this$ = this;
       findIgnore = curry$(function(get, rule){
         return line.match(escape(get(rule)));
       });
@@ -48,18 +48,6 @@
         fixed: 0
       };
       last = previous.log[previous.log.length - 1];
-      find = function(actual){
-        var reversed, i$, len$, item;
-        reversed = p.reverse(
-        previous.log);
-        for (i$ = 0, len$ = reversed.length; i$ < len$; ++i$) {
-          item = reversed[i$];
-          if (item.actual === actual) {
-            return item.fixed;
-          }
-        }
-        return actual;
-      };
       find2 = function(actual){
         var reversed, i$, len$, item;
         reversed = p.reverse(
@@ -78,7 +66,7 @@
         }
         return 0;
       };
-      found = find(current.actual);
+      found = find2(current.actual);
       gen = function(num){
         return (function(){
           var i$, to$, results$ = [];
