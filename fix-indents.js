@@ -13,7 +13,7 @@
       return (ref$ = (ref1$ = str.match(/^[ ]+/g)) != null ? (ref2$ = ref1$[0]) != null ? ref2$.length : void 8 : void 8) != null ? ref$ : 0;
     };
     process = function(previous, line){
-      var findIgnore, eachIgnore, ref$, current, last, find2, found, gen, shift, index, r_last, next, this$ = this;
+      var findIgnore, eachIgnore, ref$, current, last, find2, found, gen, shift, ignoreUnder, index, r_last, next, this$ = this;
       findIgnore = curry$(function(get, rule){
         return line.match(escape(get(rule)));
       });
@@ -79,10 +79,17 @@
         }).join("");
       };
       shift = current.actual + current.actual % countSpaces;
+      ignoreUnder = (ref$ = options != null ? options.ignoreUnder : void 8) != null
+        ? ref$
+        : [];
       current.fixed = (function(){
         switch (false) {
         case last != null:
           return 0;
+        case !(current.actual > last.actual && ignoreUnder.filter(function(it){
+            return last.line.match(it);
+          }).length > 0):
+          return last.fixed + (current.actual - last.actual);
         case !(last.fixed < last.actual && last.actual === current.actual):
           return last.fixed;
         case !(last.actual < current.actual && last.fixed < current.actual):
@@ -112,9 +119,9 @@
       previous.push(next);
       return previous;
     };
-    return str = p.join('\n')(
+    return p.join('\n')(
     p.foldl(process, [])(
-    str.split('\n')));
+    str.replace(/\t/g, '  ').split('\n')));
   };
   module.exports = fix;
   function curry$(f, bound){
