@@ -2,12 +2,6 @@
 (function(){
   var p, fix;
   p = require('prelude-ls');
-  p = {
-    any: any,
-    foldl: foldl,
-    join: join,
-    reverse: reverse
-  };
   fix = function(str, options){
     var countSpaces, ref$, escape, getSpaces, process;
     countSpaces = (ref$ = options != null ? options.countSpaces : void 8) != null ? ref$ : 2;
